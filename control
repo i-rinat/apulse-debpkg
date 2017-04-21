@@ -1,0 +1,20 @@
+Source: apulse
+Priority: optional
+Maintainer: Rinat <ibragimovrinat@mail.ru>
+Build-Depends: debhelper (>= 9), libglib2.0-dev, libasound2-dev
+Standards-Version: 3.9.8
+Section: libs
+Homepage: https://github.com/i-rinat/apulse
+Vcs-Git: https://github.com/i-rinat/apulse-debpkg
+Vcs-Browser: https://github.com/i-rinat/apulse-debpkg
+
+Package: libapulse1
+Section: optional
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: PulseAudio emulation layer
+
+Package: apulse
+Architecture: all
+Depends: ${misc:Depends}
+Description: PulseAudio emulation layer

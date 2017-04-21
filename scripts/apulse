@@ -1,0 +1,8 @@
+#!/bin/sh
+
+APULSEPATH=
+for i in /usr/lib/apulse/*.conf; do
+    APULSEPATH=$(cat $i)${APULSEPATH:+:$APULSEPATH}
+done
+
+LD_LIBRARY_PATH=$APULSEPATH${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH} exec "$@"

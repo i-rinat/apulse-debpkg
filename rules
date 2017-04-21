@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+ADST = $(CURDIR)/debian/tmp
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DAPULSEPATH=/usr/lib/$(DEB_HOST_MULTIARCH)/apulse
+
+override_dh_auto_install:
+	dh_auto_install
+	install -m 755 debian/scripts/apulse $(ADST)/usr/bin
+	mkdir -p $(ADST)/usr/lib/apulse || true
+	echo /usr/lib/$(DEB_HOST_MULTIARCH)/apulse > $(ADST)/usr/lib/apulse/$(DEB_HOST_MULTIARCH).conf
