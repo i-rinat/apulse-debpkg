@@ -17,5 +17,5 @@ Description: PulseAudio emulation layer
 
 Package: apulse
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends}, libapulse1 (=${binary:Version})
 Description: PulseAudio emulation layer
