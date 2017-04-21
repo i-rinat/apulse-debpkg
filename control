@@ -11,6 +11,7 @@ Vcs-Browser: https://github.com/i-rinat/apulse-debpkg
 Package: libapulse1
 Section: optional
 Architecture: any
+Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: PulseAudio emulation layer
 
